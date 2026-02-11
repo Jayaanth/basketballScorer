@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basketball Scoreboard</title>
+
+  <!-- Digital Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #1f2a52;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .scoreboard {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      gap: 5vw;
+    }
+
+    .team {
+      flex: 1;
+      text-align: center;
+      color: #e5e5e5;
+    }
+
+    .team h1 {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      letter-spacing: 4px;
+      margin-bottom: 2rem;
+    }
+
+    .score-box {
+      background: #080808;
+      width: 100%;
+      max-width: 250px;
+      aspect-ratio: 4/3;
+      margin: 0 auto 2rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .score {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      color: #ff4d6d;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      width: clamp(45px, 6vw, 60px);
+      height: clamp(45px, 6vw, 60px);
+      border-radius: 10px;
+      border: 2px solid #5c6c9c;
+      background: transparent;
+      color: #5c6c9c;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #5c6c9c;
+      color: #1f2a52;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="scoreboard">
+
+    <!-- HOME -->
+    <div class="team">
+      <h1>HOME</h1>
+      <div class="score-box">
+        <div class="score" id="homeScore">0</div>
+      </div>
+      <div class="controls">
+        <button class="btn" onclick="addPoints('home',1)">+1</button>
+        <button class="btn" onclick="addPoints('home',2)">+2</button>
+        <button class="btn" onclick="addPoints('home',3)">+3</button>
+      </div>
+    </div>
+
+    <!-- GUEST -->
+    <div class="team">
+      <h1>GUEST</h1>
+      <div class="score-box">
+        <div class="score" id="guestScore">0</div>
+      </div>
+      <div class="controls">
+        <button class="btn" onclick="addPoints('guest',1)">+1</button>
+        <button class="btn" onclick="addPoints('guest',2)">+2</button>
+        <button class="btn" onclick="addPoints('guest',3)">+3</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
